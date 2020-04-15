@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 
 app.options((req, res, next) => {
   res.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-  res.set('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Allow-Headers', 'content-type');
   res.set('Access-Control-Max-Age', 86400);
   res.sendStatus(200);
 });
