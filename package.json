@@ -4,7 +4,9 @@
   "description": "A substitute for jsonplaceholder.typicode.com.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "npx nodemon index.js",
+    "deploy": "git push heroku master && git push origin master"
   },
   "repository": {
     "type": "git",
