@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/daniel-schroeder-dev/jsonplaceholder-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
   }
 }
