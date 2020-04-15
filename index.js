@@ -42,6 +42,10 @@ app.post('/posts', parseJSON, (req, res, next) => {
   res.status(201).json(req.body);
 });
 
+app.post('/posts/new', parseJSON, (req, res, next) => {
+  new Post(req.body).save().then(post => res.status(201).json(post));
+});
+
 app.listen(PORT, () => {
   console.log(`jsonplaceholder-api up at: ${PORT}`);
 });
