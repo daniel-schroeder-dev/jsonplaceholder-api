@@ -3,12 +3,14 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 require('./src/db/connect');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const Post = mongoose.model('Post');
+const parseJSON = bodyParser.json();
 
 app.use(morgan('dev'));
 
@@ -24,7 +26,9 @@ app.get('/posts/:id', (req, res, next) => {
     .catch(console.error);
 });
 
-app.post('/posts');
+app.post('/posts', parseJSON, (req, res, next) => {
+  res.status(201).json(req.body);
+});
 
 app.listen(PORT, () => {
   console.log(`jsonplaceholder-api up at: ${PORT}`);
