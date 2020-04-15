@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 
+require('./src/db/connect');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
