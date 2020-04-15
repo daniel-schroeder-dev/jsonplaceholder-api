@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.options('/posts', (req, res, next) => {
+app.options('/posts*', (req, res, next) => {
   res.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
   res.set('Access-Control-Allow-Headers', 'content-type');
   res.set('Access-Control-Max-Age', 86400);
