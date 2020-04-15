@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/daniel-schroeder-dev/jsonplaceholder-api/issues"
   },
-  "homepage": "https://github.com/daniel-schroeder-dev/jsonplaceholder-api#readme"
+  "homepage": "https://github.com/daniel-schroeder-dev/jsonplaceholder-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
