@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "npm run populate",
     "dev": "npx nodemon index.js",
     "deploy": "git push heroku master && git push origin master",
     "populate": "node ./src/utils/populate-db"
