@@ -14,6 +14,18 @@ const parseJSON = bodyParser.json();
 
 app.use(morgan('dev'));
 
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.options((req, res, next) => {
+  res.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.set('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Max-Age', 86400);
+  res.sendStatus(200);
+});
+
 app.get('/posts', (req, res, next) => {
   Post.find({})
     .then(posts => res.json(posts))
